@@ -1,0 +1,72 @@
+{
+  "materias": {
+    "Algebra": {
+      "para_cursar": [],
+      "para_rendir": []
+    },
+    "Algoritmo y Estructura de Datos I": {
+      "para_cursar": [],
+      "para_rendir": []
+    },
+    "Logica y Matematica Computacional": {
+      "para_cursar": [],
+      "para_rendir": []
+    },
+    "Algoritmo y Estructura de Datos II": {
+      "para_cursar": ["Algoritmo y Estructura de Datos I(Regular)"],
+      "para_rendir": ["Algoritmo y Estructura de Datos I (Aprobada)"]
+    },
+    "Sistema y Organizaciones": {
+      "para_cursar": [],
+      "para_rendir": []
+    },
+    "Paradigmas y Lenguajes": {
+      "para_cursar": ["Algoritmo y Estructura de Datos I (Aprobada) - Algoritmo y Estructura de Datos II(Regular)"],
+      "para_rendir": ["Algoritmo y Estructura de Datos II (Aprobada)"]
+    },
+    "Arquitectura y Organizacion de Computadoras": {
+      "para_cursar": ["Logica y Matematica Computacional (Regular) - Algoritmo y Estructura de Datos I (Aprobada)"],
+      "para_rendir": ["Logica y Matematica Computacional(Aprobada)"]
+    },
+    "Calculo Diferencial e Integral": {
+      "para_cursar": ["Logica y Matematica Computacional (Regular) - Algebra (Aprobada)"],
+      "para_rendir": ["Logica y Matematica Computacional (Aprobada) - Algebra (Aprobada)"]
+    },
+    "Programacion Orientada a Objetos": {
+      "para_cursar": ["Paradigmas y Lenguajes (Regular) - Algoritmo y Estructura de Datos II (Aprobada)"],
+      "para_rendir": ["Paradigmas y Lenguajes (Aprobada) - Algoritmo y Estructura de Datos II (Aprobada)"]
+    },
+    "Sistemas Operativos": {
+      "para_cursar": ["Arquitectura y Organizacion de Computadoras (Regular) - Algoritmo y Estructura de Datos II (Aprobada)"],
+      "para_rendir": ["Arquitectura y Organizacion de Computadoras (Aprobada) - Algoritmo y Estructura de Datos II (Aprobada)"]
+    },
+    "Administracion y Gestion de Organizaciones": {
+      "para_cursar": ["Sistema y Organizaciones (Regular)"],
+      "para_rendir": ["Sistema y Organizaciones(Aprobada)"]
+    },
+    "Taller de Programacion I": {
+      "para_cursar": ["Programacion Orientada a Objetos (Regular) - Paradigmas y Lenguajes (Aprobada)"],
+      "para_rendir": ["Programacion Orientada a Objetos (Aprobada)"]
+    },
+    "Comunicaion de Datos": {
+      "para_cursar": ["Sistemas Operativos (Regular) - Arquitectura y Organizacion de Computadoras (Aprobada)"],
+      "para_rendir": ["Sistemas Operativos (Aprobada)"]
+    },
+    "Ingenieria de Software I": {
+      "para_cursar": ["Programacion Orientada a Objetos (Regular) - Administracion y Gestion de Organizaciones (Regular) - Sistema y Organizaciones(Aprobada)"],
+      "para_rendir": ["Programacion Orientada a Objetos (Aprobada) - Administracion y Gestion de Organizaciones (Aprobada)"]
+    },
+    "Taller de Programacion II": {
+      "para_cursar": ["Taller de Programacion I  - Ingenieria de Software I (Regular) y Programacion Orientada a Objetos - Sistemas Operativos (Aprobada)"],
+      "para_rendir": ["Taller de Programacion I - Ingenieria de Software I (Aprobada)"]
+    },
+    "Probabilidad y Estadistica": {
+      "para_cursar": ["Calculo Diferencial e Integral (Regular)"],
+      "para_rendir": ["Calculo Diferencial e Integral(Aprobada)"]
+    },
+    "Ingles Tecnico": {
+      "para_cursar": [],
+      "para_rendir": []
+    }
+  }
+}

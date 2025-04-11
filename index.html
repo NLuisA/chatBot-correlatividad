@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat de Correlatividad</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #chat-container {
+            width: 100%;
+            max-width: 500px;
+            height: 600px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #4a90e2;
+            color: white;
+            padding: 15px;
+            margin: 0;
+            font-size: 20px;
+        }
+
+        #chat {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: #f7f7f7;
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 10px 15px;
+            margin: 5px 10px;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .user {
+            align-self: flex-end;
+            background-color: #d0e6ff;
+            color: #000;
+            text-align: right;
+        }
+
+        .bot {
+            align-self: flex-start;
+            background-color: #e8e8e8;
+            color: #000;
+            text-align: left;
+        }
+
+        form {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            background-color: white;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        button {
+            margin-left: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #357ac8;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <h1>Chat de Correlatividad</h1>
+        <div id="chat"></div>
+
+        <form id="form">
+            <input type="text" id="materia" name="materia" placeholder="Ej: Fisica 2" autocomplete="off">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        const chat = document.getElementById('chat');
+        const form = document.getElementById('form');
+        const input = document.getElementById('materia');
+    
+        // 👇 Mensaje inicial
+        window.onload = function () {
+            agregarMensaje("¡Hola! 👋 Soy tu asistente de correlatividades.\n\nPuedo ayudarte a saber qué materias necesitás tener aprobadas o regularizadas para **cursar** o **rendir** una materia del titulo intermedio de la carrera *Licenciatura en Sistemas de la Información*. 📚", 'bot');
+        };
+    
+        form.onsubmit = function(event) {
+            event.preventDefault();
+            const materia = input.value.trim();
+            if (!materia) return;
+    
+            agregarMensaje("¿Qué necesito para " + materia + "?", 'user');
+    
+            fetch(`/correlatividad?materia=${materia}`)
+                .then(res => res.json())
+                .then(data => {
+                    const mensaje = data.mensaje || "No tengo información disponible.";
+                    agregarMensaje(mensaje, 'bot');
+                    chat.scrollTop = chat.scrollHeight;
+                });
+    
+            input.value = '';
+        };
+    
+        function agregarMensaje(texto, clase) {
+            const div = document.createElement('div');
+            div.className = `message ${clase}`;
+            div.innerHTML = texto.replace(/\n/g, "<br>");
+            chat.appendChild(div);
+            chat.scrollTop = chat.scrollHeight;
+        }
+    </script>
+    
+</body>
+</html>
