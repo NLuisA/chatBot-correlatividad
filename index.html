@@ -104,7 +104,7 @@
         <div id="chat"></div>
 
         <form id="form">
-            <input type="text" id="materia" name="materia" placeholder="Ej: Fisica 2" autocomplete="off">
+            <input type="text" id="materia" name="materia" placeholder="Ej: Programacion Orientada a Objetos" autocomplete="off">
             <button type="submit">Enviar</button>
         </form>
     </div>
@@ -114,9 +114,9 @@
         const form = document.getElementById('form');
         const input = document.getElementById('materia');
     
-        // 👇 Mensaje inicial
+        //  Mensaje inicial
         window.onload = function () {
-            agregarMensaje("¡Hola! 👋 Soy tu asistente de correlatividades.\n\nPuedo ayudarte a saber qué materias necesitás tener aprobadas o regularizadas para **cursar** o **rendir** una materia del titulo intermedio de la carrera *Licenciatura en Sistemas de la Información*. 📚", 'bot');
+            agregarMensaje("¡Hola!  Soy tu asistente de correlatividades.\n\nPuedo ayudarte a saber qué materias necesitás tener aprobadas o regularizadas para **cursar** o **rendir** una materia del titulo intermedio de la carrera *Licenciatura en Sistemas de la Información*. ", 'bot');
         };
     
         form.onsubmit = function(event) {

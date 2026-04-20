@@ -28,15 +28,15 @@ def obtener_correlatividad():
         cursar = data['para_cursar']
         rendir = data['para_rendir']
 
-        respuesta = f"🧑‍🎓 Para **cursar** *{materia_encontrada}* necesitás: "
+        respuesta = f" Para **cursar** *{materia_encontrada}* necesitás: "
         respuesta += ", ".join(cursar) if cursar else "nada, podés cursarla directamente."
 
-        respuesta += f"\n\n📝 Para **rendir** *{materia_encontrada}* necesitás: "
+        respuesta += f"\n\n Para **rendir** *{materia_encontrada}* necesitás: "
         respuesta += ", ".join(rendir) if rendir else "nada, podés rendirla directamente."
 
         return jsonify({"mensaje": respuesta})
     else:
-        return jsonify({"mensaje": f"No encontré información para la materia '{materia_ingresada}' 😕"}), 404
+        return jsonify({"mensaje": f"No encontré información para la materia '{materia_ingresada}' "}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
